@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
     
     return {
-      base: process.env.NODE_ENV === 'production' ? '/svd-image-compressor/' : '/',
+      base: mode === 'production' ? '/svd-image-compressor/' : '/',
       server: {
         port: 3000,
         host: '0.0.0.0',
