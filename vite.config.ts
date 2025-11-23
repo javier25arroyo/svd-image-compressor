@@ -15,6 +15,12 @@ export default defineConfig(({ mode }) => {
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
+          '@app': path.resolve(__dirname, 'frontend/app'),
+          '@ui': path.resolve(__dirname, 'frontend/ui'),
+          '@domain': path.resolve(__dirname, 'frontend/domain'),
+          '@application': path.resolve(__dirname, 'frontend/application'),
+          '@infrastructure': path.resolve(__dirname, 'frontend/infrastructure'),
+          '@shared': path.resolve(__dirname, 'frontend/shared'),
         }
       },
       define: {

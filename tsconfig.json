@@ -16,11 +16,30 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
+    "baseUrl": ".",
     "allowJs": true,
     "jsx": "react-jsx",
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@app/*": [
+        "./frontend/app/*"
+      ],
+      "@ui/*": [
+        "./frontend/ui/*"
+      ],
+      "@domain/*": [
+        "./frontend/domain/*"
+      ],
+      "@application/*": [
+        "./frontend/application/*"
+      ],
+      "@infrastructure/*": [
+        "./frontend/infrastructure/*"
+      ],
+      "@shared/*": [
+        "./frontend/shared/*"
       ]
     },
     "allowImportingTsExtensions": true,
