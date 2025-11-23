@@ -1,0 +1,5 @@
+{
+  "name": "SVD Image Compressor",
+  "description": "A visual tool to compress images using Singular Value Decomposition (SVD) with a Python backend and React frontend.",
+  "requestFramePermissions": []
+}
