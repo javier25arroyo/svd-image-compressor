@@ -82,12 +82,11 @@ Write-Host ""
 Write-Host "1. Configura GitHub Pages en tu repositorio:" -ForegroundColor White
 Write-Host "   Settings > Pages > Source: GitHub Actions" -ForegroundColor Gray
 Write-Host ""
-Write-Host "2. Despliega el backend en Replit:" -ForegroundColor White
-Write-Host "   https://replit.com/~ > Create Repl > Import from GitHub" -ForegroundColor Gray
-Write-Host "   Usa los secrets de Replit y el comando definido en .replit" -ForegroundColor Gray
+Write-Host "2. Despliega el backend en Render.com:" -ForegroundColor White
+Write-Host "   https://render.com > New Web Service > Conecta tu repo" -ForegroundColor Gray
 Write-Host ""
-Write-Host "3. Actualiza .env.production con la URL de Replit:" -ForegroundColor White
-Write-Host "   VITE_API_URL=https://tu-backend.usuario.repl.co" -ForegroundColor Gray
+Write-Host "3. Actualiza .env.production con la URL de Render:" -ForegroundColor White
+Write-Host "   VITE_API_URL=https://tu-backend.onrender.com" -ForegroundColor Gray
 Write-Host ""
 Write-Host "4. Haz push a GitHub:" -ForegroundColor White
 Write-Host "   git add ." -ForegroundColor Gray
