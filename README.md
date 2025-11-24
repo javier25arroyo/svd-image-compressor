@@ -64,16 +64,25 @@ El API estará disponible en `http://localhost:8000`
 Esta aplicación puede desplegarse fácilmente de forma **GRATUITA**:
 
 - **Frontend**: GitHub Pages (automático con GitHub Actions)
-- **Backend**: Render.com (plan gratuito)
+- **Backend**: Replit Deployments (plan gratuito)
 
-📖 **Consulta la [Guía de Despliegue Completa](DEPLOYMENT.md)** para instrucciones paso a paso.
 
 ### Despliegue Rápido
 
 1. **Push a GitHub**: Los cambios en `main` desplegarán automáticamente el frontend
-2. **Crear servicio en Render**: Conecta tu repo y configura el backend
-3. **Actualizar `.env.production`**: Con la URL del backend de Render
-4. **¡Listo!** Tu app estará disponible en: `https://TU-USUARIO.github.io/TU-REPO/`
+2. **Configura un Repl para el backend**:
+   - En [replit.com](https://replit.com/~) selecciona *Create Repl* → *Import from GitHub* y apunta a este repositorio
+   - Mantén el repositorio sincronizado para recibir los últimos cambios del backend
+3. **Define los Secrets en Replit** (por ejemplo `ALLOWED_ORIGINS` si lo necesitas) y asegura que el archivo `.replit` use el comando `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+4. **Actualiza `.env.production`**: Usa la URL HTTPS que Replit genera (`https://tu-backend.<usuario>.repl.co`)
+5. **¡Listo!** Tu app estará disponible en: `https://TU-USUARIO.github.io/TU-REPO/`
+
+#### Configuración recomendada en Replit
+
+- Activa el archivo `.replit` incluido para instalar dependencias y ejecutar `uvicorn`
+- Usa Deployments o el botón **Run** para mantener activo el backend (en planes gratuitos se suspende tras inactividad)
+- Gestiona variables sensibles desde la sección **Secrets** de Replit
+- Verifica que el puerto sea provisto por la variable `PORT` (Replit lo define automáticamente)
 
 ### Endpoints Disponibles
 
@@ -186,7 +195,7 @@ Las contribuciones son bienvenidas. Por favor, asegúrate de:
 
 - ✅ **GitHub Actions**: Despliegue automático del frontend
 - ✅ **GitHub Pages**: Hosting gratuito del frontend
-- ✅ **Render.com**: Backend Python gratuito
+- ✅ **Replit**: Backend Python gratuito
 - ✅ **HTTPS**: Certificados SSL automáticos
 - ✅ **CORS**: Configurado para producción
 - ✅ **Variables de entorno**: Configuración por ambiente
