@@ -15,11 +15,19 @@ if str(ROOT_DIR) not in sys.path:
 
 from backend.interfaces.http.routes import router as http_router
 
-app = FastAPI(title="SVD Image Compressor", version="1.0.0")
+app = FastAPI(
+    title="SVD Image Compressor",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+)
 
+# Configure CORS - allow all origins for simplicity in deployment
+# In production, consider restricting to specific origins
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins if allowed_origins != ["*"] else ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,6 +40,10 @@ if __name__ == "__main__":  # pragma: no cover
 
         port = int(os.getenv("PORT", "8000"))
         reload_enabled = os.getenv("UVICORN_RELOAD", "true").lower() == "true"
+        
+        # Log startup configuration for debugging deployment issues
+        print(f"Starting server on host=0.0.0.0 port={port}")
+        print(f"Reload enabled: {reload_enabled}")
 
         uvicorn.run(
             "backend.main:app",
@@ -39,4 +51,5 @@ if __name__ == "__main__":  # pragma: no cover
             port=port,
             reload=reload_enabled,
             log_level="info",
+            access_log=True,
         )
