@@ -8,8 +8,9 @@ export default defineConfig(({ mode }) => {
     return {
       base: mode === 'production' ? '/svd-image-compressor/' : '/',
       server: {
-        port: 3000,
+        port: 5000,
         host: '0.0.0.0',
+        allowedHosts: ['.repl.co', '.replit.dev', '.replit.app'],
       },
       plugins: [react()],
       resolve: {
