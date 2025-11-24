@@ -36,6 +36,10 @@ Interactive web application for compressing images using Singular Value Decompos
 - ✅ Set VITE_API_URL environment variable to Replit domain
 - ✅ Updated .gitignore for Python and Node.js
 - ✅ Configured deployment for Autoscale (FastAPI backend)
+- ✅ Fixed deployment connection issues (uses $PORT environment variable)
+- ✅ Enhanced uvicorn with [standard] extras for better performance
+- ✅ Added deployment logging for easier debugging
+- ✅ Improved health endpoint with detailed status information
 
 ## Environment Variables
 - `VITE_API_URL`: Backend API URL (set to Replit dev domain with port 8000)
