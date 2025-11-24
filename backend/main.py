@@ -16,22 +16,25 @@ if str(ROOT_DIR) not in sys.path:
 
 from backend.interfaces.http.routes import router as http_router
 
-
 app = FastAPI(title="SVD Image Compressor", version="1.0.0")
 
+# Configure CORS - allow all origins for simplicity in deployment
+# In production, consider restricting to specific origins
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "*")
+allowed_origins = ["*"] if allowed_origins_str == "*" else allowed_origins_str.split(",")
 app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
-)
 
 app.include_router(http_router)
 
 
 if __name__ == "__main__":  # pragma: no cover
         import uvicorn
+
 
         uvicorn.run(
                 "backend.main:app",

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from fastapi.responses import Response
 
@@ -12,8 +14,13 @@ router = APIRouter()
 
 
 @router.get("/health")
-async def health() -> dict[str, str]:
-    return {"status": "ok"}
+async def health() -> dict[str, Any]:
+    """Health check endpoint for monitoring backend availability."""
+    return {
+        "status": "ok",
+        "service": "svd-image-compressor-backend",
+        "version": "1.0.0"
+    }
 
 
 @router.post("/compress")

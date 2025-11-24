@@ -174,6 +174,7 @@ chmod +x scripts/setup-deployment.sh
 - 📖 **[QUICK_START.md](QUICK_START.md)** - Guía rápida para empezar en 5 minutos
 - 🚀 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Guía completa de despliegue en producción
 - 🏗️ **[ARCHITECTURE.md](ARCHITECTURE.md)** - Documentación técnica de la arquitectura
+- 🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Solución de problemas de despliegue
 
 ## 🤝 Contribuir
 
