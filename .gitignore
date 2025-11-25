@@ -39,7 +39,6 @@ ENV/
 env/
 .pythonlibs/
 uv.lock
-pyproject.toml
 
 # Editor directories and files
 .vscode/*
@@ -51,3 +50,8 @@ pyproject.toml
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files
+.env
+.env.*
+!.env.example
